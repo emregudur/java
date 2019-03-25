@@ -204,15 +204,15 @@ public class fristClass {
 		kullanici1.setUserName("emre11");
 		kullanici1.setPass("123");
 		kullanici1.setTc(1234567890);
-		kullanici1.yazdýr();
+
+		user kullanici2 = new user("murat","yýldýrým","murat131","123123",123123123,30000);
 		
 		Scanner scan = new Scanner(System.in);
-		int logReturn=kullanici1.login(scan.nextLine(), scan.nextLine());
-		if(logReturn==1){
-			System.out.println("Giriþ baþarýlý!");
-		}else{
-			System.out.println("Giriþ baþarýsýz!");
-		}
+		int userLogin=kullanici1.login(scan.nextLine(), scan.nextLine());
+		if(userLogin==1)
+			kullanici1.startLoginSec(30000);
+		else
+			System.out.println("sadasd");
 		
 		
 	}

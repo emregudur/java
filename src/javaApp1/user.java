@@ -10,16 +10,28 @@ public class user {
 	private int tc;
 	private int tel;
 	private int acountMsSleep;
-	public void yazdır(){
-		System.out.println("Merhaba "+ this.name+ " " +this.surName);
-		System.out.println("Oturum süreniz: "+ this.acountMsSleep + " Milisaniye");
-	}
+	
+	
 	public int login(String logUserName, String logPass){
 		if(this.userName.equals(logUserName) && this.pass.equals(logPass)){
-			return 1;	
+			System.out.println("Merhaba "+ this.name + " " +this.surName);
+			System.out.println("Oturum süreniz: "+ this.acountMsSleep/1000 + " saniye");
+			return 1;
 		}else{
+			System.out.println("giriş başarısız");
 			return 0;
 		}
+	}
+	
+	public user(String name, String surname, String username, String pass, int tc, int acountMsSleep){
+		this.name=name;
+		this.surName=surname;
+		this.userName=username;
+		this.pass=pass;
+		this.tc=tc;
+	}
+	
+	public user(){//overloading
 	}
 	
 	
@@ -76,5 +88,12 @@ public class user {
 	}
 	public void setAcountMsSleep(int acountMsSleep) {
 		this.acountMsSleep = acountMsSleep;
+	}
+	public void startLoginSec(int ms) throws InterruptedException{
+		while(ms>0){
+			ms-=1000;
+			Thread.sleep(1000);
+			System.out.println(ms/1000+" Saniye kaldı!");
+		}
 	}
 }
