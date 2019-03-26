@@ -16,6 +16,7 @@ public class user {
 		if(this.userName.equals(logUserName) && this.pass.equals(logPass)){
 			System.out.println("Merhaba "+ this.name + " " +this.surName);
 			System.out.println("Oturum süreniz: "+ this.acountMsSleep/1000 + " saniye");
+			this.online=true;
 			return 1;
 		}else{
 			System.out.println("giriþ baþarýsýz");
@@ -95,5 +96,10 @@ public class user {
 			Thread.sleep(1000);
 			System.out.println(ms/1000+" Saniye kaldý!");
 		}
+		this.cikis();
+	}
+	public void cikis(){
+		this.online=false;
+		System.out.println("Çýkýþ yapýldý.");
 	}
 }
